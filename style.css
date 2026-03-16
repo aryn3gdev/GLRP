@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background: linear-gradient(
+    90deg,
+    #0d4396,
+    #2984df,
+    #72bbf8,
+    #2984df,
+    #0d4396
+  );
+
+  background-size: 300% 100%;
+  animation: moveGradient 5s linear infinite alternate;
+}
+
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.Topbar {
+  max-width: 1200px;        /* maximum width of the bar */
+  width: 95%;               /* 5% of screen width on each side */
+  margin: 20px auto 0 auto; /* top margin 20px, horizontally centered */
+  background-color: #313131;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;      
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.Paragraph {
+  text-align: center;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  text-shadow: 5px 5px rgba(0,0,0,0.8);
+
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+  line-height: 1.5;
+
+  font-size: clamp(14px, 2vw, 22px);
+}
+
+.TopbarLogo {
+  width: 90px;
+  color: white
+}
+
+/* Menu container for buttons */
+.TopbarMenu {
+  display: flex;
+  margin-left: auto;
+  gap: 25px;
+  padding: 15px 30px;
+}
+
+.TopbarButton {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(12px, 1.2vw, 18px);
+}
+
+.TopbarButton:active::after {
+  content: attr(data-error);
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(12px, 1.2vw, 18px);
+}
+
+.store {
+  font-family: monospace;
+  text-align: center;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 5px 5px rgba(0,0,0,0.8);
+}
+
+.storeframe {
+  width: 90%;           /* container fills 90% of the parent width */
+  max-width: 1400px;     /* but won’t get wider than 800px */
+  height: auto;         /* height adjusts based on content */
+  min-height: 150px;    /* optional: minimum height for better shape */
+  padding: 20px; /* add some inner spacing */
+  border-radius: 20px;  /* keep rounded corners */
+  background-color: #2a2a2a; /* your dark background */
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;         /* allows cards to wrap to next line if needed */
+  gap: 20px;               /* space between cards */
+  justify-content: flex-start; /* aligns cards to left */
+  padding: 20px;/* center horizontally with some vertical margin */
+}
+
+.purchase-card {
+  background-color: #2f2f2f;
+  border-radius: 20px;
+  padding: 15px;
+  width: 220px;       /* smaller width */
+  box-sizing: border-box;
+  color: white;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+}
+
+.purchase-image {
+  width: 100%;
+  height: 110px;        /* smaller height */
+  border-radius: 18px 18px 0 0;
+  object-fit: cover;
+}
+
+.purchase-title {
+  margin: 12px 0 8px 0;
+  font-size: 1.1rem;    /* smaller font */
+  text-align: center;
+}
+
+.purchase-description {
+  font-size: 0.85rem;    /* smaller font */
+  text-align: center;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.purchase-button {
+  background: linear-gradient(270deg, #28a745, #218838, #52c41a, #218838);
+  background-size: 400% 400%;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+  /* Animation for smooth gradient shift */
+  animation: gradientShift 5s ease infinite;
+
+  /* Make the button text sharp and visible */
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+  /* Add subtle shadow to button */
+  box-shadow: 0 4px 10px rgba(33, 136, 56, 0.7);
+}
+
+.purchase-button:active::after {
+  content: attr(data-error);
+  background: linear-gradient(270deg, #28a745, #218838, #52c41a, #218838);
+  background-size: 400% 400%;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+  /* Animation for smooth gradient shift */
+  animation: gradientShift 5s ease infinite;
+
+  /* Make the button text sharp and visible */
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+  /* Add subtle shadow to button */
+  box-shadow: 0 4px 10px rgba(33, 136, 56, 0.7);
+}
+
+
+.purchase-button:hover {
+  box-shadow: 0 6px 18px rgba(33, 136, 56, 1);
+}
+
+/* Gradient background animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
